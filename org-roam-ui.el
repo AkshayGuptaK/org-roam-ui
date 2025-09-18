@@ -185,13 +185,13 @@ This serves the web-build and API over HTTP."
    ;;; check if the default keywords actually exist on `orb-preformat-keywords'
    ;;; else add them
     (setq-local httpd-port org-roam-ui-port)
-    ;;; (setq-local httpd-host "192.168.0.57")
+    ;;; (setq-local httpd-host "192.168.0.4")
     (setq httpd-root org-roam-ui-app-build-dir)
     (httpd-start)
     (setq org-roam-ui-ws-server
           (websocket-server
            35903
-           :host "192.168.0.57"
+           :host "192.168.0.4"
            :on-open #'org-roam-ui--ws-on-open
            :on-message #'org-roam-ui--ws-on-message
            :on-close #'org-roam-ui--ws-on-close))
